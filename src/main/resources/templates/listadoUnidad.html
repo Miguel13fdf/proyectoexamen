@@ -65,7 +65,7 @@
     <table class="table">
         <thead>
         <tr>
-            <th>ID de Codigo</th>
+            <th>ID de Cosigo</th>
             <th>Nombre  Unidad Operativa</th>
         </tr>
         </thead>
@@ -121,8 +121,8 @@
             }
             button.innerText = 'Editar / Guardar';
 
-            const codigo = cells[1].innerText;
-            const nombreUnidadOperativa = cells[2].innerText;
+            const codigoArticulo = cells[1].innerText;
+            const nombreArticulo = cells[2].innerText;
            
 
 
@@ -131,7 +131,7 @@
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify({ codigo, nombreUnidadOperativa }),
+                body: JSON.stringify({ id, codigoArticulo, nombreArticulo, clasificacion, stockMinimo, stockMaximo, stockActual, costoPromedio }),
             })
                 .then(response => {
                     if (response.ok) {

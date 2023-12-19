@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Crear Unidad Operativa</title>
+    <title>Crear Historia</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
 
@@ -51,33 +51,34 @@
         <img src="https://www.tecazuay.edu.ec/wp-content/uploads/2023/07/LOGO-RECTANGULAR_SIN-FONDO.png" alt="Logo de tu Aplicación" class="logo">
         <div class="menu">
             <a href="/" class="btn btn-primary">Volver al Índice</a>
-            <a href="/unidad/listado" class="btn btn-success">Ver Listado de Unidad Operativa </a>
+            <a href="/unidad/listado" class="btn btn-success">Ver Listado de Historia </a>
         </div>
     </div>
 </header>
 
 <div class="container mt-5">
-    <h1>Crear Historia Clinica</h1>
-    <form action="/crear" method="post" th:object="${cedulaNroHistoriaClinica}">
+    <h1>Crear Historia</h1>
+    <form action="/historia/guardar" method="post" th:object="${historia}">
         <div class="mb-3">
-            <label for="cedulaNroHistoriaClinica" class="form-label">Código:</label>
-            <input type="text" class="form-control" id="cedulaNroHistoriaClinica" name="cedulaNroHistoriaClinica" th:field="*{cedulaNroHistoriaClinica}" >
+            <label for="codigoUnidad" class="form-label">Código:</label>
+            <input type="text" class="form-control" id="cedulaNroHistoriaClinica" name="cedulaNroHistoriaClinica" th:field="*{cedulaNroHistoriaClinica}" required>
         </div>
         <div class="mb-3">
-            <label for="nombrePaciente" class="form-label">Nombre Paciente:</label>
+            <label for="nombreArticulo" class="form-label">Nombre Paciente:</label>
             <input type="text" class="form-control" id="nombrePaciente" name="nombrePaciente" th:field="*{nombrePaciente}" required>
         </div>
+       
         <div class="mb-3">
-            <label for="apellidoPaciente" class="form-label">Apellido Paciente:</label>
+            <label for="nombreArticulo" class="form-label">Apellido Paciente:</label>
             <input type="text" class="form-control" id="apellidoPaciente" name="apellidoPaciente" th:field="*{apellidoPaciente}" required>
+        </div> <div class="mb-3">
+			
+            <label for="nombreArticulo" class="form-label">Fecha:</label>
+            <input type="date" pattern="\d{4}-\d{2}-\d{2}" class="form-control" id="fechaNacimientoPaciente" name="fechaNacimientoPaciente" th:field="*{fechaNacimientoPaciente}" required>
         </div>
-        <div class="mb-3">
-            <label for="fechaNacimientoPaciente" class="form-label">Fecha Operativa:</label>
-            <input type="date" class="form-control" id="fechaNacimientoPaciente" name="fechaNacimientoPaciente" th:field="*{fechaNacimientoPaciente}" required>
-        </div>
+       
 
-      
-        <button type="submit" class="btn btn-primary" >Crear Historia</button>
+        <button type="submit" class="btn btn-primary">Crear Historia</button>
     </form>
 </div>
 
@@ -94,6 +95,7 @@
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script>
+	/*
     function validateForm() {
         var selectedBodega = document.getElementById('bodegaId').value;
         var errorDiv = document.getElementById('bodegaError');
@@ -106,7 +108,7 @@
             errorDiv.textContent = '';
             return true; // Permite que el formulario se envíe si la validación pasa
         }
-    }
+    }*/
 </script>
 </body>
 </html>
